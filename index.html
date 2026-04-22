@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marc Daniel Labay | Professional Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #34495e;
+            --accent: #3498db;
+            --text: #333;
+            --light: #f4f7f6;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            background: var(--primary);
+            padding: 1rem 10%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav h1 {
+            color: var(--white);
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* --- HERO SECTION --- */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 100px 10%;
+            text-align: center;
+        }
+
+        .hero-content h2 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .btn-contact {
+            padding: 12px 30px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-contact:hover {
+            background: #2980b9;
+            transform: translateY(-3px);
+        }
+
+        /* --- SECTIONS --- */
+        .container {
+            padding: 60px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2rem;
+            color: var(--primary);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* --- EXPERIENCE CARDS --- */
+        .card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--accent);
+        }
+
+        .card h3 {
+            color: var(--primary);
+        }
+
+        .date {
+            color: var(--accent);
+            font-weight: bold;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .card ul {
+            list-style: none;
+        }
+
+        .card ul li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .card ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* --- SKILLS GRID --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-item {
+            background: #e1e8ed;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* --- TOOLS SECTION --- */
+        .tools-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .tool-badge {
+            background: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 40px 10%;
+        }
+
+        .contact-info {
+            margin-bottom: 20px;
+        }
+
+        .contact-info a {
+            color: var(--accent);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h2 { font-size: 2rem; }
+            nav { flex-direction: column; }
+            .nav-links { margin-top: 15px; }
+            .nav-links a { margin: 0 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <h1>MARC DANIEL LABAY</h1>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="hero-content">
+            <h2>Marc Daniel Labay [cite: 1]</h2>
+            <p>Customer Support | Social Media Specialist | Dispute Intake [cite: 2]</p>
+            <a href="mailto:beltesazarmarc@gmail.com" class="btn-contact">Hire Me</a>
+        </div>
+    </header>
+
+    <div class="container" id="about">
+        <h2 class="section-title">Objective</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto;">
+            Results-driven professional with nearly two years of experience delivering customer support, managing high-volume tasks, and resolving complex issues. Recognized as a Subject Matter Expert (SME) for guiding team members and ensuring quality service. [cite: 7, 8]
+        </p>
+    </div>
+
+    <div class="container" id="experience" style="background: #ebf0f1;">
+        <h2 class="section-title">Work Experience</h2>
+        
+        <div class="card">
+            <h3>Social Media | Content Moderation - TaskUs Outsourcing [cite: 78]</h3>
+            <span class="date">October 2025 – April 2026 [cite: 79]</span>
+            <ul>
+                <li>Reviewed and monitored high volumes of user-generated content for policy compliance. [cite: 80]</li>
+                <li>Evaluated text, images, and videos to identify harmful content. [cite: 81]</li>
+                <li>Maintained high accuracy and quality scores while meeting strict productivity targets. [cite: 82]</li>
+                <li>Escalated complex and sensitive cases to appropriate teams. [cite: 84]</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Subject Matter Expert / Dispute Intake - Coforge BPS [cite: 32]</h3>
+            <span class="date">April 2024 – October 2025 [cite: 33]</span>
+            <ul>
+                <li>Handled high-volume inbound calls regarding banking transaction disputes. [cite: 34]</li>
+                <li>Conducted intake and verification of dispute cases to support accurate processing. [cite: 37]</li>
+                <li>Recognized as a Subject Matter Expert (SME), coaching and guiding team members. [cite: 42, 43]</li>
+                <li>Utilized CRM systems to document and track accurate records. [cite: 39]</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container" id="skills">
+        <h2 class="section-title">Skills & Capabilities</h2>
+        <div class="skills-grid">
+            <div class="skill-item">Problem Solving [cite: 49]</div>
+            <div class="skill-item">Clear Communication [cite: 46]</div>
+            <div class="skill-item">Emotional Intelligence [cite: 57]</div>
+            <div class="skill-item">Conflict Resolution [cite: 58]</div>
+            <div class="skill-item">Active Listening [cite: 45]</div>
+            <div class="skill-item">Adaptability [cite: 53]</div>
+            <div class="skill-item">Data Entry [cite: 59]</div>
+            <div class="skill-item">Multitasking [cite: 52]</div>
+        </div>
+
+        <h3 style="text-align:center; margin-top: 40px; margin-bottom: 20px; color: var(--primary);">Tools of the Trade [cite: 61]</h3>
+        <div class="tools-list">
+            <span class="tool-badge">CRM Systems [cite: 39]</span>
+            <span class="tool-badge">Ticketing Systems [cite: 63]</span>
+            <span class="tool-badge">Content Moderation Tools [cite: 71]</span>
+            <span class="tool-badge">Microsoft Office [cite: 65, 66, 67]</span>
+            <span class="tool-badge">Google Workspace [cite: 68, 69, 70]</span>
+            <span class="tool-badge">Canva & CapCut [cite: 72, 73]</span>
+            <span class="tool-badge">Zoom & Meet [cite: 76, 77]</span>
+        </div>
+    </div>
+
+    <div class="container" id="education">
+        <h2 class="section-title">Education</h2>
+        <div style="text-align: center;">
+            <p><strong>Senior High School</strong> - Marinduque National High School [cite: 12, 13]</p>
+            <p>STEM | With High Honors [cite: 14, 15]</p>
+            <br>
+            <p><strong>Primary</strong> - Duyay Elementary School [cite: 22, 23]</p>
+            <p>Batch Valedictorian [cite: 24]</p>
+        </div>
+    </div>
+
+    <footer id="contact">
+        <h3>Let's Connect</h3>
+        <div class="contact-info">
+            <p><i class="fas fa-map-marker-alt"></i> Studio City, Alabang, Muntinlupa City [cite: 6]</p>
+            <p><i class="fas fa-phone"></i> 0920-910-6898 [cite: 3]</p>
+            <p><i class="fas fa-envelope"></i> <a href="mailto:beltesazarmarc@gmail.com">beltesazarmarc@gmail.com [cite: 4]</a></p>
+        </div>
+        <p>&copy; 2024 Marc Daniel Labay. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
