@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Marc Daniel A. Labay — Customer Service Rep • Social Media Moderator • Creative Associate" />
+  <title>Marc Daniel A. Labay — Portfolio</title>
+
+  <style>
+    :root {
+      --bg0: #070A12;
+      --bg1: #0C1022;
+      --card: rgba(255, 255, 255, .08);
+      --border: rgba(255, 255, 255, .14);
+      --text: #EAF0FF;
+      --muted: #A7B0D6;
+      --accent: #7C9CFF;
+      --accent2: #2CF2C3;
+      --accent3: #FF4D8D;
+      --shadow: 0 18px 50px rgba(0, 0, 0, .45);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+    html, body { height: 100%; margin: 0; }
+    
+    body {
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color: var(--text);
+      background: radial-gradient(1200px 700px at 20% 0%, rgba(124, 156, 255, .25), transparent 55%),
+                  radial-gradient(900px 600px at 90% 10%, rgba(44, 242, 195, .18), transparent 55%),
+                  radial-gradient(900px 700px at 70% 90%, rgba(255, 77, 141, .12), transparent 60%),
+                  linear-gradient(180deg, var(--bg0), var(--bg1));
+      overflow-x: hidden;
+    }
+
+    /* Animated Aurora Blobs */
+    .blob {
+      position: fixed;
+      width: 520px;
+      height: 520px;
+      filter: blur(55px);
+      opacity: .35;
+      z-index: -1;
+      border-radius: 50%;
+      animation: float 16s ease-in-out infinite;
+      pointer-events: none;
+    }
+    .b1 { background: radial-gradient(circle at 30% 30%, var(--accent), transparent 60%); left: -140px; top: -120px; }
+    .b2 { background: radial-gradient(circle at 30% 30%, var(--accent2), transparent 60%); right: -180px; top: 40px; animation-delay: -4s; }
+    .b3 { background: radial-gradient(circle at 30% 30%, var(--accent3), transparent 60%); left: 35%; bottom: -220px; animation-delay: -9s; }
+    
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(30px, -25px) scale(1.06); }
+    }
+
+    a { color: var(--text); text-decoration: none; transition: 0.2s; }
+    a:hover { color: var(--accent); }
+
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 28px 18px 70px; }
+
+    /* Nav Bar */
+    .nav {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      padding: 12px 14px; border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .03));
+      border-radius: var(--radius); backdrop-filter: blur(10px); position: sticky; top: 15px; z-index: 100;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 850; letter-spacing: -0.02em; }
+    .dot { width: 12px; height: 12px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent2)); }
+    .navlinks { display: flex; gap: 8px; font-size: 13px; }
+    .pill { padding: 6px 12px; border: 1px solid rgba(255, 255, 255, .10); background: rgba(255, 255, 255, .04); border-radius: 999px; }
+    .pill:hover { background: rgba(255, 255, 255, .12); }
+
+    /* Hero Section */
+    header.hero {
+      margin-top: 14px; border: 1px solid var(--border); border-radius: calc(var(--radius) + 6px);
+      background: rgba(255, 255, 255, .04); backdrop-filter: blur(10px); overflow: hidden;
+    }
+    .heroInner { padding: 30px; display: grid; grid-template-columns: 1.2fr .8fr; gap: 20px; align-items: start; }
+    h1 { margin: 15px 0; font-size: 42px; letter-spacing: -0.04em; line-height: 1.1; }
+    .subtitle { color: var(--muted); font-size: 16px; line-height: 1.6; }
+    
+    .ctaRow { display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
+    .btn { padding: 12px 20px; border-radius: 12px; border: 1px solid var(--border); background: rgba(255, 255, 255, .05); font-weight: 700; font-size: 14px; }
+    .btn.primary { color: #061021; background: linear-gradient(135deg, var(--accent), var(--accent2)); border: none; }
+
+    /* Content Grid */
+    .grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 16px; margin-top: 16px; }
+    section.card { padding: 24px; border: 1px solid var(--border); background: rgba(255, 255, 255, .03); border-radius: var(--radius); backdrop-filter: blur(10px); height: fit-content; }
+    h2 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--muted); margin-bottom: 20px; }
+
+    .item { margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+    .item:last-child { border: none; }
+    .meta { font-size: 13px; color: var(--accent); margin-bottom: 8px; font-weight: 600; }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip { font-size: 12px; padding: 5px 12px; border-radius: 99px; background: rgba(255, 255, 255, 0.06); border: 1px solid var(--border); }
+
+    @media (max-width: 850px) {
+      .heroInner, .grid { grid-template-columns: 1fr; }
+      .navlinks { display: none; }
+      h1 { font-size: 32px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+
+  <div class="wrap">
+    <nav class="nav">
+      <div class="brand"><span class="dot"></span> Marc Daniel Labay</div>
+      <div class="navlinks">
+        <a class="pill" href="#experience">Experience</a>
+        <a class="pill" href="#skills">Skills</a>
+        <a class="pill" href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="heroInner">
+        <div>
+          <div class="pill" style="font-size: 11px; color: var(--accent2)">OPEN FOR WORK</div>
+          <h1>Customer Support, Moderator & Creative Associate.</h1>
+          <p class="subtitle">
+            Expert in handling high-stakes banking disputes, non-voice content moderation, and creating engaging visuals with Canva and CapCut.
+          </p>
+          <div class="ctaRow">
+            <a href="mailto:beltesazarmarc@gmail.com" class="btn primary">Email Me</a>
+            <a href="https://linkedin.com/in/marc-daniel-labay-b03765265/" class="btn">LinkedIn</a>
+          </div>
+        </div>
+        <div style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: 15px; border: 1px solid var(--border);">
+          <div style="font-size: 12px; color: var(--muted); margin-bottom: 5px;">Location</div>
+          <div style="font-weight: 700;">Alabang, Muntinlupa City</div>
+          <hr style="opacity: 0.1; margin: 15px 0;">
+          <div style="font-size: 12px; color: var(--muted); margin-bottom: 5px;">Expertise</div>
+          <div class="chips">
+            <span class="chip">SME</span> <span class="chip">Disputes</span> <span class="chip">Trust & Safety</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="grid">
+      <main>
+        <section class="card" id="experience">
+          <h2>Work Experience</h2>
+          
+          <div class="item">
+            <div class="meta">April 2024 – Oct 2025</div>
+            <h3>Coforge BPS — Subject Matter Expert</h3>
+            <p class="subtitle" style="font-size: 14px;">Specialized in voice-based banking and credit card disputes. Recognized as SME for guiding team performance.</p>
+          </div>
+
+          <div class="item">
+            <div class="meta">Oct 2025 – April 2026</div>
+            <h3>TaskUs — Content Moderator</h3>
+            <p class="subtitle" style="font-size: 14px;">Ensured platform safety through high-volume queue moderation and policy enforcement.</p>
+          </div>
+        </section>
+      </main>
+
+      <aside>
+        <section class="card" id="skills">
+          <h2>Skills & Tools</h2>
+          <div class="chips">
+            <span class="chip">Voice Support</span>
+            <span class="chip">Content Moderation</span>
+            <span class="chip">CRM</span>
+            <span class="chip">Canva</span>
+            <span class="chip">CapCut</span>
+            <span class="chip">Case Management</span>
+            <span class="chip">Emotional Intelligence</span>
+          </div>
+        </section>
+      </aside>
+    </div>
+
+    <footer style="margin-top: 50px; text-align: center; font-size: 12px; color: var(--muted);">
+      &copy; <span id="year"></span> Marc Daniel Labay. Built with Precision.
+    </footer>
+  </div>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
