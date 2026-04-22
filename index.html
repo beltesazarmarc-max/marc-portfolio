@@ -1,327 +1,660 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marc Daniel Labay | Professional Portfolio</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-    <style>
-        :root {
-            --primary: #2c3e50;
-            --secondary: #34495e;
-            --accent: #3498db;
-            --text: #333;
-            --light: #f4f7f6;
-            --white: #ffffff;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Marc Daniel A. Labay — Customer Service Rep • Social Media Moderator • Creative Associate" />
+  <title>Marc Daniel A. Labay — Portfolio</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+  <!-- ...inside <header class="hero"> ... --> 
+  <div class="heroInner"> <div> 
+    <!-- ...existing hero content... --> 
+  </div> <aside class="profileCard"> 
+    <!-- New: Profile photo (replace src="profile.jpg" accordingly) --> 
+    <div style="display:flex; flex-direction:column; align-items:center; margin-bottom:15px;"> 
+      <img src="profile.jpg" alt="Profile photo" class="profile-avatar" /> 
+    </div> <!-- ...rest of Quick Info, etc... --> 
+  </aside> 
+  </div> 
+<style>
+.profile-avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+</style>
+  
+<style>
+  .profile-avatar {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+    box-shadow: 0 4px 22px 0 rgba(124,156,255,0.25), 0 2px 7px 0 rgba(0,0,0,0.12);
+    background: var(--bg1);
+    object-fit: cover;
+    margin-bottom: 8px;
+  }
+</style>
+  <style>
+    :root{
+      --bg0:#070A12;
+      --bg1:#0C1022;
+      --card: rgba(255,255,255,.08);
+      --border: rgba(255,255,255,.14);
+      --text:#EAF0FF;
+      --muted:#A7B0D6;
+      --accent:#7C9CFF;
+      --accent2:#2CF2C3;
+      --accent3:#FF4D8D;
+      --shadow: 0 18px 50px rgba(0,0,0,.45);
+      --radius: 18px;
+    }
 
-        body {
-            background-color: var(--light);
-            color: var(--text);
-            line-height: 1.6;
-        }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--text);
+      background: radial-gradient(1200px 700px at 20% 0%, rgba(124,156,255,.25), transparent 55%),
+                  radial-gradient(900px 600px at 90% 10%, rgba(44,242,195,.18), transparent 55%),
+                  radial-gradient(900px 700px at 70% 90%, rgba(255,77,141,.12), transparent 60%),
+                  linear-gradient(180deg, var(--bg0), var(--bg1));
+      overflow-x:hidden;
+    }
 
-        /* --- NAVIGATION --- */
-        nav {
-            background: var(--primary);
-            padding: 1rem 10%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+    /* Animated “aurora” blobs */
+    .blob{
+      position: fixed;
+      width: 520px;
+      height: 520px;
+      filter: blur(55px);
+      opacity:.35;
+      z-index:-1;
+      border-radius: 50%;
+      transform: translate3d(0,0,0);
+      animation: float 16s ease-in-out infinite;
+      pointer-events:none;
+    }
+    .b1{ background: radial-gradient(circle at 30% 30%, var(--accent), transparent 60%); left:-140px; top:-120px;}
+    .b2{ background: radial-gradient(circle at 30% 30%, var(--accent2), transparent 60%); right:-180px; top:40px; animation-delay:-4s;}
+    .b3{ background: radial-gradient(circle at 30% 30%, var(--accent3), transparent 60%); left:35%; bottom:-220px; animation-delay:-9s;}
+    @keyframes float{
+      0%,100%{ transform: translate(0,0) scale(1); }
+      50%{ transform: translate(30px,-25px) scale(1.06); }
+    }
 
-        nav h1 {
-            color: var(--white);
-            font-size: 1.2rem;
-            letter-spacing: 1px;
-        }
+    a{ color: var(--text); text-decoration:none }
+    a:hover{ text-decoration:underline }
 
-        .nav-links a {
-            color: var(--white);
-            text-decoration: none;
-            margin-left: 20px;
-            font-size: 0.9rem;
-            transition: 0.3s;
-        }
+    .wrap{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 18px 70px;
+    }
 
-        .nav-links a:hover {
-            color: var(--accent);
-        }
+    /* Top nav */
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight: 850;
+      letter-spacing: -0.02em;
+      white-space:nowrap;
+    }
+    .dot{
+      width:12px;height:12px;border-radius:50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 4px rgba(124,156,255,.12);
+    }
+    .navlinks{
+      display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .pill{
+      padding: 8px 10px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      border-radius: 999px;
+    }
 
-        /* --- HERO SECTION --- */
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: var(--white);
-            padding: 100px 10%;
-            text-align: center;
-        }
+    /* Hero */
+    header.hero{
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 6px);
+      background:
+        radial-gradient(900px 420px at 10% 10%, rgba(124,156,255,.20), transparent 60%),
+        radial-gradient(850px 420px at 90% 15%, rgba(44,242,195,.16), transparent 55%),
+        rgba(255,255,255,.04);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      overflow:hidden;
+      position:relative;
+    }
+    .heroInner{
+      padding: 26px 22px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 16px;
+      align-items:start;
+    }
+    @media (max-width: 900px){
+      .heroInner{ grid-template-columns:1fr; }
+    }
 
-        .hero-content h2 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
+    .kicker{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding: 6px 10px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 13px;
+      width: fit-content;
+    }
+    h1{
+      margin: 10px 0 8px;
+      font-size: 44px;
+      letter-spacing: -0.04em;
+      line-height:1.05;
+    }
+    .subtitle{
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 65ch;
+    }
 
-        .hero-content p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 30px;
-        }
+    .ctaRow{ display:flex; gap:10px; flex-wrap:wrap; margin-top: 14px;}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      font-weight: 750;
+      font-size: 14px;
+    }
+    .btn.primary{
+      color: #061021;
+      background: linear-gradient(135deg, rgba(124,156,255,.95), rgba(44,242,195,.78));
+      border-color: rgba(124,156,255,.25);
+    }
+    .btn .tag{
+      font-weight: 850;
+      color: rgba(6,16,33,.75);
+      background: rgba(255,255,255,.55);
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+    }
 
-        .btn-contact {
-            padding: 12px 30px;
-            background: var(--accent);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+    /* Profile card */
+    .profileCard{
+      padding: 16px 16px 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      border-radius: var(--radius);
+    }
+    .miniGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+      margin-top: 10px;
+    }
+    .mini{
+      padding: 10px 10px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      border-radius: 14px;
+    }
+    .mini .label{ color: var(--muted); font-size:12px; }
+    .mini .value{ font-weight: 750; font-size: 13px; margin-top:3px; }
 
-        .btn-contact:hover {
-            background: #2980b9;
-            transform: translateY(-3px);
-        }
+    /* Highlights strip */
+    .highlights{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+      padding: 0 22px 22px;
+    }
+    @media (max-width: 900px){
+      .highlights{ grid-template-columns:1fr; }
+    }
+    .hi{
+      padding: 14px 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      border-radius: var(--radius);
+    }
+    .hi .top{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      margin-bottom: 8px;
+    }
+    .hi .badge{
+      font-size:12px;
+      color: rgba(255,255,255,.85);
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      white-space:nowrap;
+    }
+    .hi .big{
+      font-weight: 900;
+      font-size: 18px;
+      letter-spacing:-0.02em;
+    }
+    .hi p{
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
 
-        /* --- SECTIONS --- */
-        .container {
-            padding: 60px 10%;
-        }
+    /* Main layout */
+    .grid{
+      margin-top: 16px;
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 16px;
+    }
+    @media (max-width: 980px){ .grid{ grid-template-columns:1fr; } }
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            font-size: 2rem;
-            color: var(--primary);
-            position: relative;
-        }
+    section.card{
+      padding: 18px 18px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+    section.card h2{
+      margin:0 0 10px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: 13px;
+      color: var(--muted);
+    }
 
-        .section-title::after {
-            content: '';
-            width: 50px;
-            height: 3px;
-            background: var(--accent);
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
+    .item{
+      padding: 14px 0;
+      border-top: 1px solid rgba(255,255,255,.10);
+    }
+    .item:first-of-type{ border-top:0; padding-top:0; }
+    .item h3{ margin:0; font-size: 16px; }
+    .metaRow{
+      margin: 4px 0 10px;
+      color: var(--muted);
+      font-size: 14px;
+      display:flex; flex-wrap:wrap; gap:10px; align-items:center;
+    }
+    ul{
+      margin: 0 0 0 18px;
+      padding:0;
+      color: var(--text);
+    }
+    li{ margin: 6px 0; }
 
-        /* --- EXPERIENCE CARDS --- */
-        .card {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-left: 5px solid var(--accent);
-        }
+    .chips{ display:flex; flex-wrap:wrap; gap:8px; margin-top: 10px; }
+    .chip{
+      font-size: 13px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+    }
 
-        .card h3 {
-            color: var(--primary);
-        }
+    .twoCol{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 540px){
+      .twoCol{ grid-template-columns:1fr; }
+    }
 
-        .date {
-            color: var(--accent);
-            font-weight: bold;
-            display: block;
-            margin-bottom: 15px;
-        }
-
-        .card ul {
-            list-style: none;
-        }
-
-        .card ul li {
-            margin-bottom: 10px;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .card ul li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-        }
-
-        /* --- SKILLS GRID --- */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-        }
-
-        .skill-item {
-            background: #e1e8ed;
-            padding: 10px;
-            border-radius: 5px;
-            text-align: center;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        /* --- TOOLS SECTION --- */
-        .tools-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        .tool-badge {
-            background: var(--primary);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 15px;
-            font-size: 0.85rem;
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            background: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 40px 10%;
-        }
-
-        .contact-info {
-            margin-bottom: 20px;
-        }
-
-        .contact-info a {
-            color: var(--accent);
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        @media (max-width: 768px) {
-            .hero-content h2 { font-size: 2rem; }
-            nav { flex-direction: column; }
-            .nav-links { margin-top: 15px; }
-            .nav-links a { margin: 0 10px; }
-        }
-    </style>
+    footer{
+      margin-top: 16px;
+      text-align:center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+  </style>
 </head>
+
 <body>
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
 
-    <nav>
-        <h1>MARC DANIEL LABAY</h1>
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#experience">Experience</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
+  <div class="wrap">
+    <div class="nav">
+      <div class="brand"><span class="dot"></span> Marc Daniel A. Labay</div>
+      <div class="navlinks">
+        <a class="pill" href="#services">Services</a>
+        <a class="pill" href="#work">Experience</a>
+        <a class="pill" href="#skills">Skills</a>
+        <a class="pill" href="#education">Education</a>
+        <a class="pill" href="#contact">Contact</a>
+      </div>
+    </div>
 
-    <header>
-        <div class="hero-content">
-            <h2>Marc Daniel Labay [cite: 1]</h2>
-            <p>Customer Support | Social Media Specialist | Dispute Intake [cite: 2]</p>
-            <a href="mailto:beltesazarmarc@gmail.com" class="btn-contact">Hire Me</a>
+    <header class="hero">
+      <div class="heroInner">
+        <div>
+          <div class="kicker">Customer Support • Trust & Safety • Creative</div>
+
+          <h1>Customer Service Rep, Social Media Moderator, Creative Associate.</h1>
+
+          <p class="subtitle">
+            I support customers through sensitive banking, credit card, and debit card dispute concerns (voice),
+            keep platforms safe through non-voice moderation workflows (email/queue-based),
+            and create clean social content using <strong>Canva</strong> and <strong>CapCut</strong>.
+          </p>
+
+          <div class="ctaRow" id="contact">
+            <a class="btn primary" href="mailto:beltesazarmarc@gmail.com">
+              Email Me <span class="tag">Fast reply</span>
+            </a>
+
+            <a class="btn" href="https://www.instagram.com/aintmarcxs_/" target="_blank" rel="noreferrer">
+              Instagram
+            </a>
+
+            <a class="btn" href="https://www.linkedin.com/in/marc-daniel-labay-b03765265/" target="_blank" rel="noreferrer">
+              LinkedIn
+            </a>
+          </div>
         </div>
+
+        <aside class="profileCard">
+          <div style="font-weight:900; font-size:16px; letter-spacing:-0.02em;">Quick Info</div>
+
+          <div class="miniGrid">
+            <div class="mini">
+              <div class="label">Email</div>
+              <div class="value"><a href="mailto:beltesazarmarc@gmail.com">beltesazarmarc@gmail.com</a></div>
+            </div>
+            <div class="mini">
+              <div class="label">Location</div>
+              <div class="value">Alabang, Muntinlupa, PH</div>
+            </div>
+            <div class="mini">
+              <div class="label">Address</div>
+              <div class="value">Filinvest City, Alabang</div>
+            </div>
+            <div class="mini">
+              <div class="label">Birthday</div>
+              <div class="value">Dec 26, 2004</div>
+            </div>
+          </div>
+
+          <div class="chips" style="margin-top:12px;">
+            <span class="chip">Voice Support (Disputes)</span>
+            <span class="chip">Non-Voice Moderation</span>
+            <span class="chip">Canva</span>
+            <span class="chip">CapCut</span>
+          </div>
+        </aside>
+      </div>
+
+      <div class="highlights">
+        <div class="hi">
+          <div class="top">
+            <div class="big">With High Honors</div>
+            <div class="badge">Senior High</div>
+          </div>
+          <p>STEM strand with strong academic performance and consistent recognition.</p>
+        </div>
+        <div class="hi">
+          <div class="top">
+            <div class="big">Innovation Award</div>
+            <div class="badge">Achievement</div>
+          </div>
+          <p>Recognized for creativity, initiative, and problem solving in school programs.</p>
+        </div>
+        <div class="hi">
+          <div class="top">
+            <div class="big">Service Leadership</div>
+            <div class="badge">Community</div>
+          </div>
+          <p>Community service chairman experience organizing and leading initiatives.</p>
+        </div>
+      </div>
     </header>
 
-    <div class="container" id="about">
-        <h2 class="section-title">Objective</h2>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto;">
-            Results-driven professional with nearly two years of experience delivering customer support, managing high-volume tasks, and resolving complex issues. Recognized as a Subject Matter Expert (SME) for guiding team members and ensuring quality service. [cite: 7, 8]
-        </p>
-    </div>
+    <div class="grid">
+      <main>
+        <section class="card" id="services">
+          <h2>Services (Client-friendly)</h2>
 
-    <div class="container" id="experience" style="background: #ebf0f1;">
-        <h2 class="section-title">Work Experience</h2>
-        
-        <div class="card">
-            <h3>Social Media | Content Moderation - TaskUs Outsourcing [cite: 78]</h3>
-            <span class="date">October 2025 – April 2026 [cite: 79]</span>
+          <div class="twoCol">
+            <div class="item" style="border-top:0; padding-top:0;">
+              <h3>Customer Support (Voice)</h3>
+              <div class="metaRow">
+                <span>Banking • Credit Card • Debit Card Disputes</span>
+              </div>
+              <ul>
+                <li>Clear and calm communication on calls, especially for sensitive concerns.</li>
+                <li>Accurate documentation and case notes for smooth follow-ups.</li>
+                <li>Process-focused support that keeps compliance and customer trust in mind.</li>
+              </ul>
+            </div>
+
+            <div class="item" style="border-top:0; padding-top:0;">
+              <h3>Trust & Safety (Non-Voice)</h3>
+              <div class="metaRow">
+                <span>Email • Queue-based moderation</span>
+              </div>
+              <ul>
+                <li>Consistent application of rules and guidelines.</li>
+                <li>Clean tagging, categorization, and documentation.</li>
+                <li>Careful escalation for high-risk or sensitive cases.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="item">
+            <h3>Creative Support (Canva + CapCut)</h3>
+            <div class="metaRow">
+              <span>Social content • Simple edits • Captions</span>
+            </div>
             <ul>
-                <li>Reviewed and monitored high volumes of user-generated content for policy compliance. [cite: 80]</li>
-                <li>Evaluated text, images, and videos to identify harmful content. [cite: 81]</li>
-                <li>Maintained high accuracy and quality scores while meeting strict productivity targets. [cite: 82]</li>
-                <li>Escalated complex and sensitive cases to appropriate teams. [cite: 84]</li>
+              <li>Social media post designs and clean layouts using <strong>Canva</strong>.</li>
+              <li>Short-form video edits in <strong>CapCut</strong> including trimming, pacing, transitions, and captions.</li>
+              <li>Fast-turnaround revisions while keeping visuals readable and consistent.</li>
             </ul>
-        </div>
 
-        <div class="card">
-            <h3>Subject Matter Expert / Dispute Intake - Coforge BPS [cite: 32]</h3>
-            <span class="date">April 2024 – October 2025 [cite: 33]</span>
+            <div class="chips">
+              <span class="chip">Social posts</span>
+              <span class="chip">Short videos</span>
+              <span class="chip">Captions</span>
+              <span class="chip">Brand-friendly layouts</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="card" id="work" style="margin-top:16px;">
+          <h2>Work Experience</h2>
+
+          <div class="item">
+            <h3>COFORGE BPS Philippines — Subject Matter Expert (SME), Customer Service</h3>
+            <div class="metaRow">
+              <span>1 year and 5 months</span>
+              <span>•</span>
+              <span>Voice support (calls)</span>
+            </div>
             <ul>
-                <li>Handled high-volume inbound calls regarding banking transaction disputes. [cite: 34]</li>
-                <li>Conducted intake and verification of dispute cases to support accurate processing. [cite: 37]</li>
-                <li>Recognized as a Subject Matter Expert (SME), coaching and guiding team members. [cite: 42, 43]</li>
-                <li>Utilized CRM systems to document and track accurate records. [cite: 39]</li>
+              <li>Handled inbound customer calls for <strong>banking, credit card, and debit card disputes</strong>, ensuring clear explanations and a professional customer experience.</li>
+              <li>Collected and verified dispute details, documented case narratives, and ensured information completeness to support accurate investigation and resolution.</li>
+              <li>Followed privacy and compliance practices while handling sensitive financial information and identity verification.</li>
+              <li>Reduced repeat contacts by guiding customers through dispute steps, timelines, and required documentation in a calm, structured way.</li>
+              <li>Supported team performance as an <strong>SME</strong> by answering process questions, sharing best practices, and improving case handling consistency.</li>
+              <li>Completed admin tasks such as updating trackers, organizing case notes, and ensuring accurate status updates for follow-ups.</li>
             </ul>
-        </div>
+          </div>
+
+          <div class="item">
+            <h3>TaskUs — Content Moderator</h3>
+            <div class="metaRow">
+              <span>4 months</span>
+              <span>•</span>
+              <span>Non-voice (email / queue-based)</span>
+            </div>
+            <ul>
+              <li>Moderated user-generated content through non-voice workflows, enforcing platform rules and community guidelines consistently.</li>
+              <li>Reviewed reported content, identified policy violations, and applied the correct action with accurate labeling and documentation.</li>
+              <li>Wrote clear, professional notes or email responses to support transparent decisions and smooth handoffs.</li>
+              <li>Managed high-volume queues while maintaining attention to detail and quality standards.</li>
+              <li>Escalated high-risk or sensitive cases through proper channels and documented decision reasoning for audit readiness.</li>
+              <li>Performed admin tasks such as categorizing cases, tagging outcomes, and maintaining organized records for tracking and reporting.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="card" style="margin-top:16px;">
+          <h2>Career Objective</h2>
+          <ul>
+            <li>Widen communication skills and contribute creativity and problem-solving to impactful marketing campaigns and client relationships.</li>
+            <li>Take on challenging projects, collaborate with teams, and drive innovation for personal and organizational growth.</li>
+          </ul>
+        </section>
+
+        <section class="card" style="margin-top:16px;">
+          <h2>Seminars Attended</h2>
+          <ul>
+            <li>Interact Club (District Assembly) — Mataas na Kahoy, Batangas</li>
+            <li>Career Guidance Seminar</li>
+            <li>Cyber Bullying Seminar</li>
+            <li>Drug Awareness</li>
+            <li>Computer Addiction Seminar</li>
+          </ul>
+        </section>
+      </main>
+
+      <aside>
+        <section class="card" id="skills">
+          <h2>Skills & Tools</h2>
+
+          <div class="chips">
+            <span class="chip">Customer Service (Voice)</span>
+            <span class="chip">Financial Disputes</span>
+            <span class="chip">Banking Support</span>
+            <span class="chip">Credit/Debit Card Disputes</span>
+            <span class="chip">Content Moderation</span>
+            <span class="chip">Non-voice Support</span>
+            <span class="chip">Email Handling</span>
+            <span class="chip">Documentation</span>
+            <span class="chip">Canva (Design)</span>
+            <span class="chip">CapCut (Video Editing)</span>
+            <span class="chip">Microsoft Word</span>
+            <span class="chip">PowerPoint</span>
+            <span class="chip">Basic Excel</span>
+          </div>
+
+          <h2 style="margin-top:18px;">Personal Skills</h2>
+          <div class="chips">
+            <span class="chip">Good Communication</span>
+            <span class="chip">Leadership</span>
+            <span class="chip">Adaptability</span>
+            <span class="chip">Independent or Teamwork</span>
+            <span class="chip">Active Listener</span>
+            <span class="chip">Deadline-focused</span>
+            <span class="chip">Purpose-driven</span>
+          </div>
+        </section>
+
+        <section class="card" style="margin-top:16px;" id="education">
+          <h2>Education</h2>
+
+          <div class="item">
+            <h3>Marinduque National High School</h3>
+            <div class="metaRow">
+              <span>Senior High (Grade 11–12)</span>
+              <span>•</span>
+              <span>2021–2023</span>
+            </div>
+            <ul>
+              <li>STEM Strand (With High Honors)</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <h3>Marinduque National High School</h3>
+            <div class="metaRow">
+              <span>Junior High (Grade 7–10)</span>
+              <span>•</span>
+              <span>2016–2020</span>
+            </div>
+            <ul>
+              <li>Science Class Curriculum (With Honors)</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <h3>Duyay Elementary School</h3>
+            <div class="metaRow">
+              <span>Grade 1–6</span>
+              <span>•</span>
+              <span>2010–2016</span>
+            </div>
+            <ul>
+              <li>Class Valedictorian</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="card" style="margin-top:16px;">
+          <h2>Achievements</h2>
+          <ul>
+            <li>Senior High School Completer — With High Honors</li>
+            <li>Recipient of Innovation Award</li>
+            <li>Interact Club: MNHS Community Service Chairman</li>
+            <li>Junior High School Completer — With Honors (Science Class Curriculum)</li>
+          </ul>
+        </section>
+
+        <section class="card" style="margin-top:16px;">
+          <h2>Contact</h2>
+          <ul>
+            <li>Email: <a href="mailto:beltesazarmarc@gmail.com">beltesazarmarc@gmail.com</a></li>
+            <li>Instagram: <a href="https://www.instagram.com/aintmarcxs_/" target="_blank" rel="noreferrer">aintmarcxs_</a></li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/marc-daniel-labay-b03765265/" target="_blank" rel="noreferrer">marc-daniel-labay</a></li>
+            <li>Location: Alabang, Muntinlupa, Philippines</li>
+          </ul>
+        </section>
+      </aside>
     </div>
 
-    <div class="container" id="skills">
-        <h2 class="section-title">Skills & Capabilities</h2>
-        <div class="skills-grid">
-            <div class="skill-item">Problem Solving [cite: 49]</div>
-            <div class="skill-item">Clear Communication [cite: 46]</div>
-            <div class="skill-item">Emotional Intelligence [cite: 57]</div>
-            <div class="skill-item">Conflict Resolution [cite: 58]</div>
-            <div class="skill-item">Active Listening [cite: 45]</div>
-            <div class="skill-item">Adaptability [cite: 53]</div>
-            <div class="skill-item">Data Entry [cite: 59]</div>
-            <div class="skill-item">Multitasking [cite: 52]</div>
-        </div>
-
-        <h3 style="text-align:center; margin-top: 40px; margin-bottom: 20px; color: var(--primary);">Tools of the Trade [cite: 61]</h3>
-        <div class="tools-list">
-            <span class="tool-badge">CRM Systems [cite: 39]</span>
-            <span class="tool-badge">Ticketing Systems [cite: 63]</span>
-            <span class="tool-badge">Content Moderation Tools [cite: 71]</span>
-            <span class="tool-badge">Microsoft Office [cite: 65, 66, 67]</span>
-            <span class="tool-badge">Google Workspace [cite: 68, 69, 70]</span>
-            <span class="tool-badge">Canva & CapCut [cite: 72, 73]</span>
-            <span class="tool-badge">Zoom & Meet [cite: 76, 77]</span>
-        </div>
-    </div>
-
-    <div class="container" id="education">
-        <h2 class="section-title">Education</h2>
-        <div style="text-align: center;">
-            <p><strong>Senior High School</strong> - Marinduque National High School [cite: 12, 13]</p>
-            <p>STEM | With High Honors [cite: 14, 15]</p>
-            <br>
-            <p><strong>Primary</strong> - Duyay Elementary School [cite: 22, 23]</p>
-            <p>Batch Valedictorian [cite: 24]</p>
-        </div>
-    </div>
-
-    <footer id="contact">
-        <h3>Let's Connect</h3>
-        <div class="contact-info">
-            <p><i class="fas fa-map-marker-alt"></i> Studio City, Alabang, Muntinlupa City [cite: 6]</p>
-            <p><i class="fas fa-phone"></i> 0920-910-6898 [cite: 3]</p>
-            <p><i class="fas fa-envelope"></i> <a href="mailto:beltesazarmarc@gmail.com">beltesazarmarc@gmail.com [cite: 4]</a></p>
-        </div>
-        <p>&copy; 2024 Marc Daniel Labay. All Rights Reserved.</p>
+    <footer>
+      © <span id="y"></span> Marc Daniel A. Labay •
+      <a href="https://www.instagram.com/aintmarcxs_/" target="_blank" rel="noreferrer">Instagram</a> •
+      <a href="https://www.linkedin.com/in/marc-daniel-labay-b03765265/" target="_blank" rel="noreferrer">LinkedIn</a>
     </footer>
+  </div>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
